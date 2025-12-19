@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pizzasystem.controladores.DetallePedidoController">
+    
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #3498db;">
+            <Label text="Detalle del Pedido" style="-fx-text-fill: white; -fx-font-size: 18px;">
+                <padding>
+                    <Insets top="10" bottom="10" left="20" right="20"/>
+                </padding>
+            </Label>
+        </HBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.6" padding="20">
+            <!-- Panel izquierdo: Especificaciones -->
+            <VBox spacing="15">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Número de Pedido:" style="-fx-font-weight: bold;"/>
+                    <Label fx:id="lblNumeroPedido" style="-fx-font-size: 16px; -fx-text-fill: #2980b9;"/>
+                </HBox>
+                
+                <Label text="Especificaciones:" style="-fx-font-weight: bold;"/>
+                <ListView fx:id="listaEspecificaciones" prefHeight="300"/>
+            </VBox>
+            
+            <!-- Panel derecho: Estado y acciones -->
+            <VBox spacing="20">
+                <Label text="Estado Actual:" style="-fx-font-weight: bold;"/>
+                <StackPane alignment="CENTER">
+                    <Circle fx:id="indicadorEstadoCircular" radius="50" fill="#e74c3c"/>
+                    <Label fx:id="lblEstado" text="Recibido" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                </StackPane>
+                
+                <Separator/>
+                
+                <Label text="Acciones:" style="-fx-font-weight: bold;"/>
+                <VBox spacing="10">
+                    <Button fx:id="btnImprimirTicket" text="Imprimir Ticket" 
+                            style="-fx-pref-width: 200;" 
+                            onAction="#imprimirTicket"/>
+                    <Button fx:id="btnEnviarAHorno" text="Enviar al Horno" 
+                            style="-fx-pref-width: 200;" 
+                            onAction="#enviarAHorno"/>
+                    <Button fx:id="btnCancelarPedido" text="Cancelar Pedido" 
+                            style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-pref-width: 200;" 
+                            onAction="#cancelarPedido"/>
+                </VBox>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

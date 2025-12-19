@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pizzasystem.controladores.PanelControlPedidosController">
+    
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #2c3e50;">
+            <Label text="Panel de Control de Pedidos" style="-fx-text-fill: white; -fx-font-size: 18px;">
+                <padding>
+                    <Insets top="10" bottom="10" left="20" right="20"/>
+                </padding>
+            </Label>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnLogout" text="Cerrar Sesión" 
+                    onAction="#logout" 
+                    style="-fx-text-fill: white; -fx-background-color: #e74c3c;">
+                <padding>
+                    <Insets top="5" bottom="5" left="10" right="10"/>
+                </padding>
+            </Button>
+        </HBox>
+    </top>
+    
+    <center>
+        <GridPane hgap="20" vgap="20" padding="20">
+            <columnConstraints>
+                <ColumnConstraints prefWidth="200"/>
+                <ColumnConstraints prefWidth="200"/>
+                <ColumnConstraints prefWidth="200"/>
+                <ColumnConstraints prefWidth="200"/>
+                <ColumnConstraints prefWidth="200"/>
+            </columnConstraints>
+            
+            <Label text="Recibido" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ListView fx:id="listaRecibido" prefHeight="400" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            
+            <Label text="Preparando" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <ListView fx:id="listaPreparando" prefHeight="400" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            
+            <Label text="Horneando" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <ListView fx:id="listaHorneando" prefHeight="400" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            
+            <Label text="Terminado" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+            <ListView fx:id="listaTerminado" prefHeight="400" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+            
+            <Label text="Entregado" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+            <ListView fx:id="listaEntregado" prefHeight="400" GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+        </GridPane>
+    </center>
+</BorderPane>

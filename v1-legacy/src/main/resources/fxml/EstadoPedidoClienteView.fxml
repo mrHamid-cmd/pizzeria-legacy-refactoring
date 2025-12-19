@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pizzasystem.controladores.EstadoPedidoClienteController">
+    
+    <center>
+        <VBox alignment="CENTER" spacing="30" padding="50">
+            <Label text="Seguimiento de tu Pedido" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Número de Pedido:" style="-fx-font-size: 16px;"/>
+                <Label fx:id="lblNumeroPedido" style="-fx-font-size: 18px; -fx-text-fill: #2980b9; -fx-font-weight: bold;"/>
+            </HBox>
+            
+            <!-- Indicadores de estado -->
+            <HBox spacing="40" alignment="CENTER">
+                <VBox alignment="CENTER" spacing="10">
+                    <Circle fx:id="indicador1" radius="20" fill="#27ae60"/>
+                    <Label text="Recibido"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="10">
+                    <Circle fx:id="indicador2" radius="20" fill="#95a5a6"/>
+                    <Label text="Preparando"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="10">
+                    <Circle fx:id="indicador3" radius="20" fill="#95a5a6"/>
+                    <Label text="Horneando"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="10">
+                    <Circle fx:id="indicador4" radius="20" fill="#95a5a6"/>
+                    <Label text="Terminado"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="10">
+                    <Circle fx:id="indicador5" radius="20" fill="#95a5a6"/>
+                    <Label text="Entregado"/>
+                </VBox>
+            </HBox>
+            
+            <Label fx:id="lblMensajeEstado" text="Tu pedido ha sido recibido y está siendo procesado." 
+                   style="-fx-font-size: 16px; -fx-text-alignment: center;" 
+                   wrapText="true" maxWidth="400"/>
+            
+            <Button text="Actualizar Estado" onAction="#actualizarEstado" 
+                    style="-fx-pref-width: 150; -fx-font-size: 14px;"/>
+        </VBox>
+    </center>
+</BorderPane>

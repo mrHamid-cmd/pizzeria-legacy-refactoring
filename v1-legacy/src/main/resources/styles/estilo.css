@@ -1,0 +1,674 @@
+/* Archivo: src/main/resources/styles/estilo.css */
+
+/* Estilos generales */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5f5f5;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15 8 15;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 8, 0, 0, 3);
+}
+
+.button:pressed {
+    -fx-background-color: #21618c;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 3, 0, 0, 1);
+}
+
+/* Campos de texto y combos */
+.text-field, .password-field, .combo-box {
+    -fx-background-radius: 3;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3;
+    -fx-padding: 5;
+    -fx-background-color: white;
+}
+
+.text-field:focused, .password-field:focused, .combo-box:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.3), 5, 0, 0, 1);
+}
+
+/* ListViews */
+.list-view {
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3;
+    -fx-background-color: white;
+}
+
+.list-cell {
+    -fx-padding: 8 5 8 5;
+    -fx-background-color: white;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #ecf0f1;
+}
+
+.list-cell:empty {
+    -fx-background-color: white;
+}
+
+/* TextArea */
+.text-area {
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3;
+    -fx-background-color: white;
+}
+
+.text-area .content {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+.label.error {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+.label.success {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}
+
+/* Separadores */
+.separator .line {
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* GridPane y VBox/HBox */
+.grid-pane {
+    -fx-background-color: transparent;
+}
+
+.vbox, .hbox {
+    -fx-background-color: transparent;
+}
+
+/* Scroll bars */
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .thumb:hover, .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #95a5a6;
+}
+
+/* SplitPane */
+.split-pane {
+    -fx-background-color: transparent;
+}
+
+.split-pane-divider {
+    -fx-background-color: #ecf0f1;
+}
+
+/* StackPane */
+.stack-pane {
+    -fx-background-color: transparent;
+}
+
+/* Efectos para indicadores */
+.circle-indicator {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    -fx-opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+/* Estilos para estados */
+.estado-recidibo {
+    -fx-fill: #e74c3c;
+}
+
+.estado-preparando {
+    -fx-fill: #f39c12;
+}
+
+.estado-horneando {
+    -fx-fill: #f1c40f;
+}
+
+.estado-terminado {
+    -fx-fill: #2ecc71;
+}
+
+.estado-entregado {
+    -fx-fill: #3498db;
+}
+
+.estado-cancelado {
+    -fx-fill: #95a5a6;
+}
+/* Estilos para TomaPedidoView */
+
+/* Estilos generales para checkboxes en ListView */
+.list-view .list-cell {
+    -fx-padding: 5px;
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: #ecf0f1;
+}
+
+/* Estilos para checkboxes */
+.check-box {
+    -fx-font-size: 13px;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #27ae60;
+    -fx-border-color: #27ae60;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3;
+}
+
+/* Estilos para combos */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3;
+    -fx-padding: 5;
+}
+
+.combo-box:hover {
+    -fx-border-color: #3498db;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 5px;
+}
+
+/* Botones grandes para POS */
+.button-pos {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 15 30;
+    -fx-background-radius: 5;
+}
+
+.button-confirmar {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+
+.button-confirmar:hover {
+    -fx-background-color: #229954;
+}
+
+.button-gestionar {
+    -fx-background-color: #7f8c8d;
+    -fx-text-fill: white;
+}
+
+.button-gestionar:hover {
+    -fx-background-color: #6c7b7d;
+}
+
+/* Etiqueta de total grande */
+.total-grande {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27ae60;
+}
+
+/* Paneles con bordes */
+.panel-borde {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-padding: 20;
+}
+
+/* Estilos para PanelControlPedidosView - Tablero Kanban */
+
+/* Estilos generales del tablero */
+.kanban-column {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.kanban-column-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.kanban-counter {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-weight: normal;
+}
+
+/* Estilos para las listas de pedidos */
+.kanban-list {
+    -fx-control-inner-background: white;
+    -fx-border-color: #ecf0f1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+}
+
+.kanban-list .list-cell {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #e9ecef;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+    -fx-font-size: 12px;
+}
+
+.kanban-list .list-cell:filled:hover {
+    -fx-background-color: #e3f2fd;
+    -fx-border-color: #bbdefb;
+    -fx-cursor: hand;
+}
+
+.kanban-list .list-cell:filled:selected {
+    -fx-background-color: #bbdefb;
+    -fx-border-color: #90caf9;
+}
+
+/* Estilos para pedidos urgentes */
+.pedido-urgente {
+    -fx-background-color: #fff3cd;
+    -fx-border-color: #ffeaa7;
+}
+
+/* Estilos para los botones del header */
+.button-header {
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5;
+}
+
+.button-nuevo-pedido {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+
+.button-nuevo-pedido:hover {
+    -fx-background-color: #229954;
+}
+
+.button-actualizar {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.button-actualizar:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button-logout {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+.button-logout:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Barra de estado */
+.status-bar {
+    -fx-background-color: #34495e;
+    -fx-padding: 10 25;
+}
+
+.status-text {
+    -fx-text-fill: #bdc3c7;
+    -fx-font-size: 12px;
+}
+
+.status-counter {
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 12px;
+}
+
+/* Color indicators para columnas */
+.color-indicator-recidibo {
+    -fx-fill: #e74c3c;
+}
+
+.color-indicator-preparando {
+    -fx-fill: #f39c12;
+}
+
+.color-indicator-horneando {
+    -fx-fill: #f1c40f;
+}
+
+.color-indicator-terminado {
+    -fx-fill: #2ecc71;
+}
+
+.color-indicator-entregado {
+    -fx-fill: #3498db;
+}
+/* Estilos para DetallePedidoView */
+
+/* Botón regresar con efecto hover */
+.button-regresar {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3498db;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+
+.button-regresar:hover {
+    -fx-background-color: #e3f2fd;
+    -fx-text-fill: #3498db;
+}
+
+/* Barra de progreso personalizada */
+.progress-bar-estado {
+    -fx-accent: #3498db;
+    -fx-background-color: #ecf0f1;
+    -fx-pref-height: 8;
+    -fx-pref-width: 200;
+}
+
+.progress-bar-recidibo {
+    -fx-accent: #e74c3c;
+}
+
+.progress-bar-preparando {
+    -fx-accent: #f39c12;
+}
+
+.progress-bar-horneando {
+    -fx-accent: #f1c40f;
+}
+
+.progress-bar-terminado {
+    -fx-accent: #2ecc71;
+}
+
+.progress-bar-entregado {
+    -fx-accent: #3498db;
+}
+
+/* Indicador circular */
+.circle-indicator {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+/* Estilos para items de la lista */
+.list-cell-base {
+    -fx-background-color: white;
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-padding: 8 5;
+}
+
+.list-cell-ingrediente {
+    -fx-background-color: white;
+    -fx-text-fill: #34495e;
+    -fx-padding: 5 5 5 20;
+}
+
+.list-cell-condimento {
+    -fx-background-color: white;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-style: italic;
+    -fx-padding: 5 5 5 20;
+}
+
+.list-cell-total {
+    -fx-background-color: #f8f9fa;
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-alignment: center-right;
+    -fx-padding: 15 5;
+}
+
+/* Botones de acción */
+.button-accion {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 12 25;
+    -fx-background-radius: 5;
+}
+
+.button-imprimir {
+    -fx-background-color: #7f8c8d;
+    -fx-text-fill: white;
+}
+
+.button-imprimir:hover {
+    -fx-background-color: #6c7b7d;
+}
+
+.button-avanzar {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.button-avanzar:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button-cancelar {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+.button-cancelar:hover {
+    -fx-background-color: #c0392b;
+}
+
+.button-deshabilitado {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-opacity: 0.7;
+}
+
+/* Etiqueta de total */
+.label-total {
+    -fx-font-size: 28px;
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}
+
+/* Estado visual */
+.label-estado {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-weight: bold;
+}
+
+/* Títulos */
+.titulo-pedido {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.titulo-especificaciones {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+/* En estilo.css */
+.progress-bar-estado {
+    -fx-accent: #3498db;
+    -fx-background-color: #ecf0f1;
+    -fx-pref-height: 12px;
+    -fx-pref-width: 250px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 3, 0, 0, 1);
+}
+
+.progress-bar-estado .bar {
+    -fx-background-radius: 6px;
+    -fx-padding: 2px;
+}
+
+.progress-bar-estado .track {
+    -fx-background-radius: 6px;
+}
+
+/* Colores según estado */
+.progress-bar-recidibo .bar {
+    -fx-background-color: #e74c3c;
+}
+
+.progress-bar-preparando .bar {
+    -fx-background-color: #f39c12;
+}
+
+.progress-bar-horneando .bar {
+    -fx-background-color: #f1c40f;
+}
+
+.progress-bar-terminado .bar {
+    -fx-background-color: #2ecc71;
+}
+
+.progress-bar-entregado .bar {
+    -fx-background-color: #3498db;
+}
+
+/* Estilos para EstadoPedidoClienteView */
+
+/* Fondo oscuro premium */
+.fondo-oscuro {
+    -fx-background-color: linear-gradient(to bottom, #282828, #1a1a1a);
+}
+
+/* Efectos para etapas */
+.etapa-activa {
+    -fx-effect: dropshadow(three-pass-box, rgba(255,165,0,0.7), 20, 0.5, 0, 0);
+}
+
+.etapa-completada {
+    -fx-effect: dropshadow(three-pass-box, rgba(78,205,196,0.7), 15, 0.5, 0, 0);
+}
+
+.etapa-inactiva {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0.3, 0, 0);
+}
+
+/* Conectores */
+.conector-activo {
+    -fx-background-color: linear-gradient(to right, transparent, #FFA500, transparent);
+    -fx-effect: dropshadow(three-pass-box, #FFA500, 5, 0.3, 0, 0);
+}
+
+.conector-inactivo {
+    -fx-background-color: #444444;
+}
+
+/* Botones transparentes */
+.boton-transparente {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFD700;
+    -fx-border-color: #FFD700;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+
+.boton-transparente:hover {
+    -fx-background-color: rgba(255, 215, 0, 0.1);
+}
+
+/* Textos */
+.texto-dorado {
+    -fx-text-fill: #FFD700;
+    -fx-font-weight: bold;
+}
+
+.texto-blanco {
+    -fx-text-fill: white;
+}
+
+.texto-gris {
+    -fx-text-fill: #AAAAAA;
+}
+
+/* Contenedores con bordes sutiles */
+.contenedor-borde {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0% { -fx-scale-x: 1; -fx-scale-y: 1; }
+    50% { -fx-scale-x: 1.05; -fx-scale-y: 1.05; }
+    100% { -fx-scale-x: 1; -fx-scale-y: 1; }
+}
+
+.pulse-animation {
+    -fx-animation: pulse 1s infinite;
+}
+
+@keyframes glow {
+    0% { -fx-effect: dropshadow(three-pass-box, rgba(255,69,0,0.5), 10, 0, 0, 0); }
+    50% { -fx-effect: dropshadow(three-pass-box, rgba(255,69,0,0.8), 15, 0, 0, 0); }
+    100% { -fx-effect: dropshadow(three-pass-box, rgba(255,69,0,0.5), 10, 0, 0, 0); }
+}
+
+.glow-animation {
+    -fx-animation: glow 2s infinite;
+}
